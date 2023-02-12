@@ -13,7 +13,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@constants/*": ["./src/@constants/*"],
+      "@/cypress/*": ["./cypress/*"],
+      "@/icons/*": ["./public/icons/*"],
+      "@/images/*": ["./public/images/*"],
+      "@/*": ["./src/*"],
+      "@/styles/*": ["styles/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
