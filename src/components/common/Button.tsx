@@ -1,17 +1,19 @@
 import React, { PropsWithChildren } from 'react'
 
 type ButtonProps = {
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type']
+  disabled?: boolean
 }
 
 const Button = ({
   onClick,
   type,
-  children
+  children,
+  disabled
 }: PropsWithChildren<ButtonProps>): JSX.Element => {
   return (
-    <button onClick={onClick} type={type}>
+    <button onClick={onClick} type={type} disabled={disabled}>
       {children}
     </button>
   )

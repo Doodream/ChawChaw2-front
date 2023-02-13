@@ -16,7 +16,6 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@constants/*": ["./src/@constants/*"],
       "@/cypress/*": ["./cypress/*"],
       "@/icons/*": ["./public/icons/*"],
       "@/images/*": ["./public/images/*"],
