@@ -17,5 +17,6 @@
   "trailingComma": "none",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "disableLanguages": []
+  "disableLanguages": [],
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

@@ -34,7 +34,7 @@ module.exports = {
       success: '#3C8505'
     },
     screens: {
-      mobile: '375px',
+      mobile: '576px',
       desktop: '1024px'
     },
     extend: {
