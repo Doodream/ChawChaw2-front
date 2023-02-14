@@ -1,25 +1,31 @@
 /*@tailwind base : reset css */
-html {
-    font-size: calc(min(100vw, 450px) / 375 * 10); /* 지원하는 최대사이즈를 450px로 지정 */
-}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "BMJUA";
+    src: url("../public/fonts/BMJUA_ttf.ttf");
+}
 
 @layer base {
-    .h1 {
+    html {
+        font-family: BMJUA;
+        font-size: calc(min(100vw, 450px) / 375 * 10); /* 지원하는 최대사이즈를 450px로 지정 */
+    }
+    .head1 {
         @apply text-48 leading-68 text-gray
     }
-    .h2 {
+    .head2 {
         @apply text-39 leading-48 text-gray
     }
-    .h3 {
+    .head3 {
         @apply text-31 leading-40 text-gray
     }
-    .h4 {
+    .head4 {
         @apply text-25 leading-32 text-gray
     }
-    .h5 {
+    .head5 {
         @apply text-20 leading-24 text-gray
     }
     .paragraph {
@@ -35,13 +41,13 @@ html {
 
 @layer components {
     .btn {
-        @apply box-border flex justify-center items-center relative gap-8 p-20 rounded-12 text-white focus:border-solid focus:border-4 disabled:bg-gray-300 disabled:text-gray
+        @apply box-border h-64 w-163 flex justify-center items-center relative gap-2 p-5 rounded-12 text-white focus:border-solid focus:border-4 disabled:bg-gray-300 disabled:text-gray
     }
     .btn-primary {
         @apply btn bg-primary hover:bg-primary-dark focus:border-b-primary-light
     }
     .btn-secondary {
-        @apply btn bg-primary hover:bg-secondary-dark focus:border-b-secondary-light
+        @apply btn bg-secondary hover:bg-secondary-dark focus:border-b-secondary-light
     }
     .btn-outline {
         @apply btn bg-white border-b-primary border-2 hover:bg-secondary-dark focus:border-b-secondary-light
