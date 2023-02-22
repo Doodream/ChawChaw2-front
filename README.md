@@ -13,8 +13,8 @@ ChawChaw2는 국내 대학교 유학생들 과 국내 재학생 간의 언어소
 
 Design : `Figma`
 
-FrontEnd : `Typescript` `React18` `NextJs13` `TailwindCss`
-Tools : `LightHouse` `Jest` `ReactTestingLibrary` `YarnBerry` `Prettier` `EsLint`
+FrontEnd : `Typescript` `React18` `NextJs13` `TailwindCss` `Cypress` `Storybook`
+Tools : `LightHouse` `Jest` `ReactTestingLibrary` `YarnBerry` `Prettier` `EsLint` 
 
 CI/CD : Frontend `Vercel`
 
