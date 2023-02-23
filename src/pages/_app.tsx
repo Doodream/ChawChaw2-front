@@ -2,8 +2,8 @@ import type { AppProps } from 'next/app'
 import React from 'react'
 import '@/styles/globals.css'
 import Layout from '@/components/common/layout'
-import { initializeApp } from 'firebase/app'
-import * as process from 'process'
+import * as firebase from 'firebase/app'
+import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -14,9 +14,10 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID,
   measurementId: process.env.MEASUREMENT_ID
 }
-
 function MyApp({ Component, pageProps }: AppProps) {
-  const app = initializeApp(firebaseConfig)
+  firebase.initializeApp(firebaseConfig)
+  const userAuth = getAuth()
+
   return (
     <>
       <Layout>

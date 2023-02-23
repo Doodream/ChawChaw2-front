@@ -4,34 +4,41 @@ const rem0_200 = { ...Array.from(Array(201)).map((_, i) => `${i / 10}rem`) }
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}'
-  ],
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      bmjua: ['BMJUA']
+      Pretendard: ['Pretendard']
     },
     colors: {
       transparent: 'transparent',
       black: '#000',
       white: '#fff',
       gray: {
-        DEFAULT: '#1A1A1A',
-        100: '#F9F9F9',
-        200: '#E0E0E0',
-        300: '#767676',
-        400: '#1A1A1A'
+        DEFAULT: '#1B1E21',
+        black: '#000000',
+        900: '#1B1E21',
+        800: '#2C3136',
+        700: '#42494F',
+        600: '#5A6169',
+        500: '#727A82',
+        400: '#8C949C',
+        300: '#A7AEB5',
+        200: '#C2C8CF',
+        100: '#DFE3E8',
+        70: '#EEF1F5',
+        50: '#F4F7FA',
+        30: '#FAFBFD',
+        white: '#FFFFFF'
       },
       primary: {
-        DEFAULT: '#3F46D6',
-        dark: '#181C71',
-        light: '#D5D7F6'
+        DEFAULT: '#FFC400',
+        dark: '#FFB300',
+        light: '#FFE57F'
       },
       secondary: {
-        DEFAULT: '#25D9C6',
-        dark: '#0F5750',
-        light: '#D3F8F4'
+        DEFAULT: '#3CB371',
+        dark: '#006400',
+        light: '#82F9B7'
       },
       error: '#E71D36',
       warning: '#FFB800',
@@ -41,7 +48,6 @@ module.exports = {
       mobile: '576px',
       desktop: '1024px'
     },
-
     extend: {
       borderWidth: rem0_10,
       fontSize: rem0_100,

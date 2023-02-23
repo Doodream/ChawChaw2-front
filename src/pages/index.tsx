@@ -4,7 +4,7 @@ import Header from '@/components/common/header'
 import Icons from '@/components/common/icons'
 import UserImage from '@/components/common/user-image'
 
-const Home: NextPage = () => {
+const PageHome: NextPage = () => {
   return (
     <>
       <Header
@@ -17,4 +17,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default PageHome

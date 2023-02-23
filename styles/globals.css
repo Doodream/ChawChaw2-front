@@ -4,52 +4,113 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-    font-family: "BMJUA";
-    src: url("../public/fonts/BMJUA_ttf.ttf");
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 100;
+    src: url("../public/fonts/Pretendard-Thin.subset.woff2");
 }
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 200;
+    src: url("../public/fonts/Pretendard-ExtraLight.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../public/fonts/Pretendard-Light.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/Pretendard-Regular.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public/fonts/Pretendard-Medium.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public/fonts/Pretendard-SemiBold.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../public/fonts/Pretendard-Bold.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../public/fonts/Pretendard-ExtraBold.subset.woff2");
+}
+@font-face {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../public/fonts/Pretendard-Black.subset.woff2");
+}
+
+
 
 @layer base {
     html {
-        font-family: BMJUA;
+        font-family: Pretendard, sans-serif;
         font-size: calc(min(100vw, 450px) / 375 * 10); /* 지원하는 최대사이즈를 450px로 지정 */
     }
     .head1 {
-        @apply text-48 leading-68 text-gray
+        @apply text-48 leading-68 text-gray font-bold
     }
     .head2 {
-        @apply text-39 leading-48 text-gray
+        @apply text-39 leading-48 text-gray font-bold
     }
     .head3 {
-        @apply text-31 leading-40 text-gray
+        @apply text-31 leading-40 text-gray font-bold
     }
     .head4 {
-        @apply text-25 leading-32 text-gray
+        @apply text-25 leading-32 text-gray font-bold
     }
     .head5 {
-        @apply text-20 leading-24 text-gray
+        @apply text-20 leading-24 text-gray font-bold
     }
     .paragraph {
-        @apply text-16 leading-24 text-gray
+        @apply text-16 leading-24 text-gray font-normal
     }
     .label {
-        @apply text-13 leading-16 text-gray
+        @apply text-13 leading-16 text-gray font-medium
     }
     .tiny {
-        @apply text-10 leading-12 text-gray
+        @apply text-10 leading-12 text-gray font-light
     }
 }
 
 @layer components {
     .btn {
-        @apply box-border h-64 w-163 flex justify-center items-center relative gap-2 p-5 rounded-12 text-white focus:border-solid focus:border-4 disabled:bg-gray-300 disabled:text-gray
+        @apply box-border h-64 w-163 flex justify-center items-center relative gap-2 p-5 rounded-12 text-white focus:border-solid disabled:bg-gray-300 disabled:text-gray
+    }
+    .btn-disabled {
+        @apply disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
     }
     .btn-primary {
-        @apply btn bg-primary hover:bg-primary-dark focus:border-b-primary-light
+        @apply btn bg-primary hover:bg-primary-light focus:bg-primary-dark disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
     }
     .btn-secondary {
-        @apply btn bg-secondary hover:bg-secondary-dark focus:border-b-secondary-light
+        @apply btn bg-secondary hover:bg-secondary-dark focus:border-b-secondary-light disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
     }
     .btn-outline {
-        @apply btn bg-white border-b-primary border-2 hover:bg-secondary-dark focus:border-b-secondary-light
+        @apply btn bg-white border-2 hover:border-primary focus:border-4 focus:border-primary text-gray disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
+    }
+    .input-field {
+        @apply paragraph relative box-border flex flex-shrink-0 flex-grow-0 items-center justify-start gap-2 self-stretch overflow-hidden rounded-12 border border-gray-200 bg-white px-10 outline-none placeholder:text-gray-300 focus:border-2 focus:border-primary
+    }
+    .input-label {
+        @apply paragraph flex flex-col gap-8
     }
 }

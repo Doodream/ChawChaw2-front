@@ -7034,6 +7034,7 @@ __metadata:
     prettier-plugin-tailwindcss: ^0.2.2
     react: latest
     react-dom: latest
+    react-hook-form: ^7.43.2
     react-test-renderer: ^18.2.0
     storybook-addon-designs: ^6.3.1
     tailwindcss: ^3.1.8
@@ -14790,6 +14791,15 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1
   checksum: 42bcd4423f12e9ee21b2d3f0c2a28805ff4953bd82b6be4c1f5b5f9a371115aafa36a6f3d82726d43b4912179b79e99550c2b9a772c7fe6a5cd8f7e93ff34ceb
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.43.2":
+  version: 7.43.2
+  resolution: "react-hook-form@npm:7.43.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 68d4fb73fec052801d5e7840c3d0afba887676acfdefa33aef342ead0db419cb1a14a0891ed567cea58a78d544d9245445c593e25bc0564a797201cb32c91a01
   languageName: node
   linkType: hard
 

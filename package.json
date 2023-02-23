@@ -22,7 +22,8 @@
   "dependencies": {
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-hook-form": "^7.43.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.16",
