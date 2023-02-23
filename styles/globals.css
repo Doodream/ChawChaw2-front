@@ -58,8 +58,6 @@
     src: url("../public/fonts/Pretendard-Black.subset.woff2");
 }
 
-
-
 @layer base {
     html {
         font-family: Pretendard, sans-serif;
@@ -99,7 +97,7 @@
         @apply disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
     }
     .btn-primary {
-        @apply btn bg-primary hover:bg-primary-light focus:bg-primary-dark disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
+        @apply btn bg-primary disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
     }
     .btn-secondary {
         @apply btn bg-secondary hover:bg-secondary-dark focus:border-b-secondary-light disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed

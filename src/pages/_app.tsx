@@ -16,7 +16,6 @@ const firebaseConfig = {
 }
 function MyApp({ Component, pageProps }: AppProps) {
   firebase.initializeApp(firebaseConfig)
-  const userAuth = getAuth()
 
   return (
     <>

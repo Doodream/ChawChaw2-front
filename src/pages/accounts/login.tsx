@@ -4,6 +4,15 @@ import Icons from '@/components/common/icons'
 import { NextPage } from 'next'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import Link from 'next/link'
+import Checkbox from '@/components/common/checkbox'
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider
+} from 'firebase/auth'
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*()_+])[0-9a-zA-Z!@#$%^&*()_+]{8,}$/
@@ -21,14 +30,10 @@ const PageLogin: NextPage = () => {
     handleSubmit,
     formState: { errors }
   } = useForm<FormData>({
-    mode: 'onBlur',
-    defaultValues: {
-      email: '',
-      password: '',
-      rememberMe: true,
-      autoLogin: false
-    }
+    mode: 'onBlur'
   })
+
+  const userAuth = getAuth()
 
   const validateEmail = (email: string) => {
     if (!emailRegex.test(email)) {
@@ -44,8 +49,22 @@ const PageLogin: NextPage = () => {
     return true
   }
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data, 'asdfa')
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    try {
+      await signInWithEmailAndPassword(userAuth, data.email, data.password)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  const handleSoicalSignIn: React.MouseEventHandler<HTMLButtonElement> = async (e) => {
+    const { name } = e.target as HTMLButtonElement
+    const provider = name === 'google' ? new GoogleAuthProvider() : new GithubAuthProvider()
+    try {
+      await signInWithPopup(userAuth, provider)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return (
@@ -103,14 +122,8 @@ const PageLogin: NextPage = () => {
             )}
           </label>
           <div className="mb-10 flex w-full items-center justify-start gap-10">
-            <div className="flex items-center gap-4">
-              <input type="checkbox" id="rememberMe" {...register('rememberMe')} />
-              <label htmlFor="rememberMe">아이디 저장</label>
-            </div>
-            <div className="flex items-center gap-4">
-              <input type="checkbox" id="autoLogin" {...register('autoLogin')} />
-              <label htmlFor="autoLogin">자동 로그인</label>
-            </div>
+            <Checkbox id="rememberMe" checked={true} text="아이디 저장" register={register('rememberMe')} />
+            <Checkbox id="autoLogin" checked={true} text="자동 로그인" register={register('autoLogin')} />
           </div>
           <button type="submit" className="btn-primary head5 h-48 w-full">
             로그인
@@ -128,10 +141,16 @@ const PageLogin: NextPage = () => {
           </Link>
         </section>
         <section className="flex w-full gap-10">
-          <button type="submit" className="btn-outline head5 h-48 w-full">
-            Github
+          <button
+            name="github"
+            type="button"
+            className="btn-outline label h-48 w-full gap-10"
+            onClick={handleSoicalSignIn}>
+            <img className="h-20 w-20" src="/images/github.svg" alt="github" />
+            <span>Github</span>
           </button>
-          <button type="submit" className="btn-outline head5 h-48 w-full">
+          <button name="google" type="button" className="btn-outline label h-48 w-full" onClick={handleSoicalSignIn}>
+            <img className="h-20 w-20" src="/images/google-plus.svg" alt="google" />
             Google
           </button>
         </section>

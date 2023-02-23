@@ -58,6 +58,6 @@ module.exports = {
       gap: rem0_100,
       borderRadius: rem0_100
     }
-  },
-  plugins: []
+  }
+  // plugins: [require('daisyui')]
 }
