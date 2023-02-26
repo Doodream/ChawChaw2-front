@@ -4,15 +4,16 @@ import Icons from '@/components/common/icons'
 import { NextPage } from 'next'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import Link from 'next/link'
-import Checkbox from '@/components/common/checkbox'
 import {
   getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signInWithPopup,
+  GithubAuthProvider,
   GoogleAuthProvider,
-  GithubAuthProvider
+  signInWithEmailAndPassword,
+  signInWithPopup
 } from 'firebase/auth'
+import SelectModal from '@/components/common/modal/select-modal'
+import useModal from '@/hooks/common/use-modal'
+import { SelectModalTypeEnum } from '@/constants/select-modal-type-enum'
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*()_+])[0-9a-zA-Z!@#$%^&*()_+]{8,}$/
@@ -33,6 +34,7 @@ const PageLogin: NextPage = () => {
     mode: 'onBlur'
   })
 
+  const errorModalProps = useModal<string>({ initOpen: false })
   const userAuth = getAuth()
 
   const validateEmail = (email: string) => {
@@ -63,7 +65,7 @@ const PageLogin: NextPage = () => {
     try {
       await signInWithPopup(userAuth, provider)
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
@@ -81,55 +83,61 @@ const PageLogin: NextPage = () => {
         </section>
         <form className="flex w-full flex-col" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="email" className="input-label mb-10">
-            이메일
+            <span className="label">이메일</span>
             <input
               id="email"
-              className="input-field h-40 w-full"
+              className="input-bordered input-primary input h-40 w-full"
               type="email"
               placeholder="chawchaw@example.com"
               autoComplete="true"
               {...register('email', { required: true, validate: validateEmail })}
             />
             {errors.email?.type === 'required' && (
-              <span className="paragraph text-error" role="alert" aria-live="polite">
+              <span className="label text-error" role="alert" aria-live="polite">
                 이메일을 입력해주세요.
               </span>
             )}
             {errors.email?.type === 'validate' && (
-              <span className="paragraph text-error" role="alert" aria-live="polite">
+              <span className="label text-error" role="alert" aria-live="polite">
                 {errors.email.message}
               </span>
             )}
           </label>
           <label htmlFor="password" className="input-label mb-10">
-            비밀번호
+            <span className="label">비밀번호</span>
             <input
               id="password"
-              className="input-field h-40 w-full"
+              className="input-bordered input-primary input h-40 w-full"
               type="password"
               placeholder="비밀번호를 입력해주세요."
               {...register('password', { required: true, validate: validatePassword })}
             />
             {errors.password?.type === 'required' && (
-              <span className="paragraph text-error" role="alert" aria-live="polite">
+              <span className="label text-error" role="alert" aria-live="polite">
                 비밀번호를 입력해주세요.
               </span>
             )}
             {errors.password?.type === 'validate' && (
-              <span className="paragraph text-error" role="alert" aria-live="polite">
+              <span className="label text-error" role="alert" aria-live="polite">
                 {errors.password.message}
               </span>
             )}
           </label>
           <div className="mb-10 flex w-full items-center justify-start gap-10">
-            <Checkbox id="rememberMe" checked={true} text="아이디 저장" register={register('rememberMe')} />
-            <Checkbox id="autoLogin" checked={true} text="자동 로그인" register={register('autoLogin')} />
+            <label htmlFor="rememberMe" className="label cursor-pointer gap-5">
+              <span className="label">아이디 저장</span>
+              <input id="rememberMe" type="checkbox" className="checkbox-primary checkbox" />
+            </label>
+            <label htmlFor="autoLogin" className="label cursor-pointer gap-5">
+              <span className="label">자동 로그인</span>
+              <input id="autoLogin" type="checkbox" className="checkbox-primary checkbox" />
+            </label>
           </div>
-          <button type="submit" className="btn-primary head5 h-48 w-full">
-            로그인
+          <button type="submit" className="btn-primary btn h-48 w-full">
+            <span className="head5">로그인</span>
           </button>
         </form>
-        <section className="divide-color divide-x divide-gray-300">
+        <nav className="divide-color divide-x divide-gray-300">
           <Link href="/accounts/find-id" className="paragraph px-10">
             아이디 찾기
           </Link>
@@ -139,22 +147,34 @@ const PageLogin: NextPage = () => {
           <Link href="/accounts/sign-up" className="paragraph px-10">
             회원가입
           </Link>
-        </section>
+        </nav>
         <section className="flex w-full gap-10">
           <button
             name="github"
             type="button"
-            className="btn-outline label h-48 w-full gap-10"
+            className="btn-outline btn-primary btn h-48 grow gap-10"
             onClick={handleSoicalSignIn}>
             <img className="h-20 w-20" src="/images/github.svg" alt="github" />
             <span>Github</span>
           </button>
-          <button name="google" type="button" className="btn-outline label h-48 w-full" onClick={handleSoicalSignIn}>
+          <button
+            name="google"
+            type="button"
+            className="btn-outline btn-primary btn h-48 grow gap-10"
+            onClick={handleSoicalSignIn}>
             <img className="h-20 w-20" src="/images/google-plus.svg" alt="google" />
-            Google
+            <span>Google</span>
           </button>
         </section>
       </div>
+      {errorModalProps.open && (
+        <SelectModal
+          modalType={SelectModalTypeEnum.ActionCancel}
+          modalProps={errorModalProps}
+          headerText="Error"
+          contentText={errorModalProps.data}
+        />
+      )}
     </>
   )
 }

@@ -35,6 +35,12 @@
     }
   },
   "rules": {
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
   },
   "overrides": [
     {
@@ -48,7 +54,7 @@
       "env": {
         "jest/globals": true
       },
-      "plugins": ["jest", "jest-dom", "testing-library"],
+      "plugins": ["jest", "jest-dom", "testing-library", "unused-imports"],
       "extends": [
         "plugin:jest/recommended",
         "plugin:jest-dom/recommended",

@@ -64,51 +64,51 @@
         font-size: calc(min(100vw, 450px) / 375 * 10); /* 지원하는 최대사이즈를 450px로 지정 */
     }
     .head1 {
-        @apply text-48 leading-68 text-gray font-bold
+        @apply text-48 leading-68 font-bold
     }
     .head2 {
-        @apply text-39 leading-48 text-gray font-bold
+        @apply text-39 leading-48 font-bold
     }
     .head3 {
-        @apply text-31 leading-40 text-gray font-bold
+        @apply text-31 leading-40 font-bold
     }
     .head4 {
-        @apply text-25 leading-32 text-gray font-bold
+        @apply text-25 leading-32 font-bold
     }
     .head5 {
-        @apply text-20 leading-24 text-gray font-bold
+        @apply text-20 leading-24 font-bold
     }
     .paragraph {
-        @apply text-16 leading-24 text-gray font-normal
+        @apply text-16 leading-24 font-normal
     }
     .label {
-        @apply text-13 leading-16 text-gray font-medium
+        @apply text-13 leading-16 font-medium
     }
     .tiny {
-        @apply text-10 leading-12 text-gray font-light
+        @apply text-10 leading-12 font-light
     }
 }
 
 @layer components {
-    .btn {
-        @apply box-border h-64 w-163 flex justify-center items-center relative gap-2 p-5 rounded-12 text-white focus:border-solid disabled:bg-gray-300 disabled:text-gray
-    }
-    .btn-disabled {
-        @apply disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
-    }
-    .btn-primary {
-        @apply btn bg-primary disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
-    }
-    .btn-secondary {
-        @apply btn bg-secondary hover:bg-secondary-dark focus:border-b-secondary-light disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
-    }
-    .btn-outline {
-        @apply btn bg-white border-2 hover:border-primary focus:border-4 focus:border-primary text-gray disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed
-    }
+    /*.btn {*/
+    /*    @apply box-border h-64 w-163 flex justify-center items-center relative gap-2 p-5 rounded-12 text-white focus:border-solid disabled:bg-gray-300 disabled:text-gray*/
+    /*}*/
+    /*.btn-disabled {*/
+    /*    @apply disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed*/
+    /*}*/
+    /*.btn-primary {*/
+    /*    @apply btn bg-primary disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed*/
+    /*}*/
+    /*.btn-secondary {*/
+    /*    @apply btn bg-secondary hover:bg-secondary-dark focus:border-b-secondary-light disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed*/
+    /*}*/
+    /*.btn-outline {*/
+    /*    @apply btn bg-white border-2 hover:border-primary focus:border-4 focus:border-primary text-gray disabled:bg-gray-300 disabled:text-gray disabled:text-white disabled:cursor-not-allowed*/
+    /*}*/
     .input-field {
         @apply paragraph relative box-border flex flex-shrink-0 flex-grow-0 items-center justify-start gap-2 self-stretch overflow-hidden rounded-12 border border-gray-200 bg-white px-10 outline-none placeholder:text-gray-300 focus:border-2 focus:border-primary
     }
     .input-label {
-        @apply paragraph flex flex-col gap-8
+        @apply flex flex-col gap-4
     }
 }
