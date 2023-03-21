@@ -1,0 +1,25 @@
+name: Label main branch Pull Requests
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  label-main-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label main branch Pull Requests
+        if: github.event.pull_request.base.ref == 'main'
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const { repo: { owner, repo }, pull_request: { number } } = context;
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: number,
+              labels: ['main']
+            });
