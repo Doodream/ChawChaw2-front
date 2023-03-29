@@ -74,7 +74,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-test-renderer", "virtual:cc0a8bae2ec7c1985aa6d53ffd36f2c2fd523b69badf9af4ff762232f50e1b963416eb54cdde92b076dc8f98a53c73763816c9bb12890a7d17ea893d6656ea55#npm:18.2.0"],\
             ["storybook-addon-designs", "npm:6.3.1"],\
             ["tailwindcss", "virtual:cc0a8bae2ec7c1985aa6d53ffd36f2c2fd523b69badf9af4ff762232f50e1b963416eb54cdde92b076dc8f98a53c73763816c9bb12890a7d17ea893d6656ea55#npm:3.1.8"],\
-            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
+            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
+            ["webpack-bundle-analyzer", "npm:4.8.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -12178,7 +12179,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-test-renderer", "virtual:cc0a8bae2ec7c1985aa6d53ffd36f2c2fd523b69badf9af4ff762232f50e1b963416eb54cdde92b076dc8f98a53c73763816c9bb12890a7d17ea893d6656ea55#npm:18.2.0"],\
             ["storybook-addon-designs", "npm:6.3.1"],\
             ["tailwindcss", "virtual:cc0a8bae2ec7c1985aa6d53ffd36f2c2fd523b69badf9af4ff762232f50e1b963416eb54cdde92b076dc8f98a53c73763816c9bb12890a7d17ea893d6656ea55#npm:3.1.8"],\
-            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
+            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
+            ["webpack-bundle-analyzer", "npm:4.8.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -24801,6 +24803,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/webpack-bundle-analyzer-npm-4.7.0-493ca27caa-4ce3b379c6.zip/node_modules/webpack-bundle-analyzer/",\
           "packageDependencies": [\
             ["webpack-bundle-analyzer", "npm:4.7.0"],\
+            ["acorn", "npm:8.8.2"],\
+            ["acorn-walk", "npm:8.2.0"],\
+            ["chalk", "npm:4.1.2"],\
+            ["commander", "npm:7.2.0"],\
+            ["gzip-size", "npm:6.0.0"],\
+            ["lodash", "npm:4.17.21"],\
+            ["opener", "npm:1.5.2"],\
+            ["sirv", "npm:1.0.19"],\
+            ["ws", "virtual:493ca27caa9730d53796bf46d93d1213703387136db60f7b816041e959d3cb1a62bc13be34a82de626dbd98398e8e9e974646b7441d583184447b1e29d391402#npm:7.5.9"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.8.0", {\
+          "packageLocation": "./.yarn/cache/webpack-bundle-analyzer-npm-4.8.0-fcf0c72c7d-acd86f68ab.zip/node_modules/webpack-bundle-analyzer/",\
+          "packageDependencies": [\
+            ["webpack-bundle-analyzer", "npm:4.8.0"],\
+            ["@discoveryjs/json-ext", "npm:0.5.7"],\
             ["acorn", "npm:8.8.2"],\
             ["acorn-walk", "npm:8.2.0"],\
             ["chalk", "npm:4.1.2"],\
