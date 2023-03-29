@@ -6,6 +6,7 @@
 @font-face {
     font-family: "BMJUA";
     src: url("../public/fonts/BMJUA_ttf.ttf");
+    font-display: swap;
 }
 
 @layer base {
