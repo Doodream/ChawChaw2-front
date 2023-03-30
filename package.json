@@ -21,6 +21,8 @@
     ]
   },
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.279",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
