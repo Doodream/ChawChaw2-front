@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "bundle-analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -20,11 +21,15 @@
     ]
   },
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.279",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@lottiefiles/lottie-player": "^1.7.1",
+    "@next/bundle-analyzer": "^13.2.4",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -67,7 +72,8 @@
     "storybook-addon-designs": "^6.3.1",
     "style-dictionary": "^3.7.2",
     "tailwindcss": "^3.1.8",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "webpack-bundle-analyzer": "^4.8.0"
   },
   "packageManager": "yarn@3.2.4"
 }
