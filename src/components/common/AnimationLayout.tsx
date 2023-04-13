@@ -11,9 +11,6 @@ const AnimationLayout = ({ children }: PropsWithChildren) => {
       return {
         x: 0,
         transition,
-        transitionEnd: {
-          position: 'static'
-        },
         ...(isPush && {
           position: 'fixed',
           top: 0,
