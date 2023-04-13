@@ -13,6 +13,7 @@
     html {
         font-family: BMJUA;
         font-size: calc(min(100vw, 450px) / 375 * 10); /* 지원하는 최대사이즈를 450px로 지정 */
+
     }
     .head1 {
         @apply text-48 leading-68 text-gray
