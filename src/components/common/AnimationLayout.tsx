@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useContext } from 'react'
 import { motion, Variants } from 'framer-motion'
 import { RouteContext } from '@/providers/RouteProvider'
 
-const transition = { ease: 'easeInOut', duration: 0.3 }
+const transition = { ease: 'easeInOut', duration: 0.15 }
 const AnimationLayout = ({ children }: PropsWithChildren) => {
   const { isPush } = useContext(RouteContext)
 
