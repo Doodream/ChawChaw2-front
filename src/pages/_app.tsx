@@ -18,7 +18,8 @@ const firebaseConfig = {
 }
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  // const app = initializeApp(firebaseConfig)
+  const app = initializeApp(firebaseConfig)
+  console.log('renderMyApp')
 
   return (
     <RouteProvider>

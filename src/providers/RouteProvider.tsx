@@ -1,4 +1,4 @@
-import React, { createContext, PropsWithChildren, useState } from 'react'
+import React, { createContext, PropsWithChildren, useEffect, useState } from 'react'
 
 type RouteContextType = {
   isPush: boolean
@@ -12,6 +12,16 @@ export const RouteContext = createContext<RouteContextType>({
 
 export const RouteProvider = ({ children }: PropsWithChildren) => {
   const [isPush, setIsPush] = useState(false)
+
+  useEffect(() => {
+    const handlePopstate = () => {
+      setIsPush(false)
+    }
+    window.addEventListener('popstate', handlePopstate)
+    return () => {
+      window.removeEventListener('popstate', handlePopstate)
+    }
+  }, [])
 
   const value = {
     isPush,
