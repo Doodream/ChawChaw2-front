@@ -5,6 +5,12 @@ module.exports = () => {
   const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true'
   })
+
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const withPWA = require('next-pwa')({
+    dest: 'public'
+  })
+
   const nextConfig = {
     compress: true,
     env: {
@@ -28,5 +34,5 @@ module.exports = () => {
     }
   }
 
-  return withBundleAnalyzer(nextConfig)
+  return withBundleAnalyzer(withPWA(nextConfig))
 }

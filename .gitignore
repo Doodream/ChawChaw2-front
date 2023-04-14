@@ -39,11 +39,6 @@ next-env.d.ts
 # webstorm
 .idea
 
-# yarn berry zero install
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# PWA
+public/sw.js
+public/workbox-*.js
