@@ -21,6 +21,7 @@ const firebaseConfig = {
 function MyApp({ Component, pageProps, router }: AppProps) {
   const app = initializeApp(firebaseConfig)
 
+  console.log(1)
   return (
     <RouteProvider>
       <AnimatePresence initial={false}>
